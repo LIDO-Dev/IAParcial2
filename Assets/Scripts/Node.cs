@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class Node : MonoBehaviour
 {
-    public list<Node> vecinos;
+    public List<Node> neighbors;
     public Vector3 Position => transform.position;
-    public float getCost (Node vecino)
+    public float GetCost (Node neighbor)
     {
-        return Vector3.distance(Position, vecino.Position);
+        return Vector3.Distance(Position, neighbor.Position);
     } 
 
 }
