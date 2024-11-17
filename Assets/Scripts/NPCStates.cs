@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class FSM
+public abstract class NPCState
 {
     protected NPC npc;
 

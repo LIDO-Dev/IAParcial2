@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ChasingState : FSM
+public class ChasingState : NPCState
 {
     public ChasingState(NPC npc) : base(npc) { }
 

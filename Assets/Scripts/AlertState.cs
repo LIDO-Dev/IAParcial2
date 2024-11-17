@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AlertState : FSM
+public class AlertState : NPCState
 {
     private Vector3 lastKnownPosition;
 

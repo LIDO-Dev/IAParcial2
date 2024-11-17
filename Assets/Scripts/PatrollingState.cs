@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PatrollingState : FSM
+public class PatrollingState : NPCState
 {
     private int currentWaypointIndex = 0;
 
@@ -10,7 +10,7 @@ public class PatrollingState : FSM
 
     public override void Enter()
     {
-        npc.SetDestination(npc.waypoints[currentWaypointIndex]);
+        npc.SetDestination(npc.waypoints[currentWaypointIndex].Position);
     }
 
     public override void Update()
@@ -18,7 +18,7 @@ public class PatrollingState : FSM
         if (npc.IsAtDestination())
         {
             currentWaypointIndex = (currentWaypointIndex + 1) % npc.waypoints.Length;
-            npc.SetDestination(npc.waypoints[currentWaypointIndex]);
+            npc.SetDestination(npc.waypoints[currentWaypointIndex].Position);
         }
 
         if (npc.CanSeePlayer())
