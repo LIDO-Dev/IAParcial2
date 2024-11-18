@@ -4,34 +4,47 @@ using UnityEngine;
 
 public class NPC : MonoBehaviour
 {
+
+    public PatrollingState PatrollingState { get; private set; }
+    public AlertState AlertState { get; private set; }
+    public ChasingState ChasingState { get; private set; }
+    public NPCManager NPCManager { get; private set; }
     public Node[] waypoints;
     public Transform player;
     public float viewDistance;
     public float viewAngle;
     public LayerMask obstacleMask;
-
     public float moveSpeed = 5f;
-
     public float alertRadius = 10f;
-
     public Vector3 lastKnowPlayerPosition;
-
     private Node currentNode;
-
     private List<Node> currentPath;
-
     private int currentNodeIndex;
-
     private NPCState currentState;
 
     void Start()
-    {
-        SetState(new PatrollingState(this));
+    {        
+        PatrollingState = new PatrollingState(this);
+        AlertState = new AlertState(this, Vector3.zero);
+        ChasingState = new ChasingState(this);
+        NPCManager = new NPCManager();
+        SetState(PatrollingState);
+        currentNode = Aestrella.GetNearestNode(this.transform.position);
+        //NPCManager.Instance.RegisterNPC(this);
     }
 
     void Update()
     {
         currentState.Update();
+        //currentNode = Aestrella.GetNearestNode(this.transform.position);
+       
+        if (CanSeePlayer())
+        {
+            lastKnowPlayerPosition = player.position;
+            AlertOthers();
+            SetState(new ChasingState(this));
+        }
+
 
         if (currentPath != null && currentNodeIndex < currentPath.Count)
         {
@@ -42,6 +55,7 @@ public class NPC : MonoBehaviour
 
             if (Vector3.Distance(transform.position, targetPosition) < 0.1f)
             {
+                //Debug.Log($"{name} alcanzó el nodo {targetNode.name}. Avanzando al siguiente.");
                 currentNode = targetNode;
                 currentNodeIndex++;
             }
@@ -79,8 +93,17 @@ public class NPC : MonoBehaviour
             currentPath = Aestrella.FindPath(currentNode, targetNode);
             if (currentPath != null && currentPath.Count > 0)
             {
+                //Debug.Log($"Camino encontrado para {name} hacia {position}. Nodos en el camino: {currentPath.Count}");
                 currentNodeIndex = 0;
             }
+            else
+            {
+                //Debug.LogWarning($"No se encontró camino para {name} hacia {position}.");
+            }
+        }
+        else
+        {
+            //Debug.LogWarning($"No se encontró un nodo cercano para la posición {position}.");
         }
     }
 
@@ -91,14 +114,23 @@ public class NPC : MonoBehaviour
 
     public void AlertOthers()
     {
-        Collider[] colliders = Physics.OverlapSphere(transform.position, alertRadius);
-        foreach (Collider collider in colliders)
+
+        foreach (NPC npc in NPCManager.Instance.AllNPCs)
         {
-            NPC otherNPC = collider.GetComponent<NPC>();
-            if (otherNPC != null && otherNPC != this)
+            Vector3 playerPosition = lastKnowPlayerPosition;
+
+            if (npc == this) continue;
+            Debug.Log($"Alertando a {npc.name}");
+            if (npc.AlertState != null)
             {
-                otherNPC.SetDestination(lastKnowPlayerPosition);
+                npc.AlertState.SetAlertPosition(lastKnowPlayerPosition);
+                npc.SetState(npc.AlertState);
+            }
+            else
+            {
+                Debug.LogWarning($"El NPC {npc.name} no tiene un AlertState configurado.");
             }
         }
     }
+
 }

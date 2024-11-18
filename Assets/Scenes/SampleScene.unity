@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 6873733}
   - component: {fileID: 6873734}
   m_Layer: 0
-  m_Name: Node (1)
+  m_Name: Node (44)
   m_TagString: Untagged
   m_Icon: {fileID: 4162164826716764455, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -181,7 +181,7 @@ GameObject:
   - component: {fileID: 14197480}
   - component: {fileID: 14197481}
   m_Layer: 0
-  m_Name: Node (2)
+  m_Name: Node (45)
   m_TagString: Untagged
   m_Icon: {fileID: 4162164826716764455, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -274,7 +274,7 @@ GameObject:
   - component: {fileID: 56469172}
   - component: {fileID: 56469171}
   m_Layer: 0
-  m_Name: Node (1)
+  m_Name: Node (6)
   m_TagString: Untagged
   m_Icon: {fileID: 8418204508859773708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -321,7 +321,7 @@ GameObject:
   - component: {fileID: 76211353}
   - component: {fileID: 76211354}
   m_Layer: 0
-  m_Name: Node
+  m_Name: Node (25)
   m_TagString: Untagged
   m_Icon: {fileID: 4162164826716764455, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -368,7 +368,7 @@ GameObject:
   - component: {fileID: 85951959}
   - component: {fileID: 85951960}
   m_Layer: 0
-  m_Name: Node
+  m_Name: Node (30)
   m_TagString: Untagged
   m_Icon: {fileID: 4162164826716764455, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -415,7 +415,7 @@ GameObject:
   - component: {fileID: 111697030}
   - component: {fileID: 111697029}
   m_Layer: 0
-  m_Name: Node (2)
+  m_Name: Node (22)
   m_TagString: Untagged
   m_Icon: {fileID: 4162164826716764455, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -462,7 +462,7 @@ GameObject:
   - component: {fileID: 121622402}
   - component: {fileID: 121622403}
   m_Layer: 0
-  m_Name: Node (2)
+  m_Name: Node (40)
   m_TagString: Untagged
   m_Icon: {fileID: 4162164826716764455, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -508,7 +508,7 @@ GameObject:
   - component: {fileID: 183041962}
   - component: {fileID: 183041963}
   m_Layer: 0
-  m_Name: Node
+  m_Name: Node (38)
   m_TagString: Untagged
   m_Icon: {fileID: 4162164826716764455, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -637,6 +637,7 @@ GameObject:
   m_Component:
   - component: {fileID: 187795468}
   - component: {fileID: 187795469}
+  - component: {fileID: 187795470}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -679,12 +680,37 @@ MonoBehaviour:
   - {fileID: 721635612}
   - {fileID: 1105845668}
   player: {fileID: 5238820402657899787}
-  viewDistance: 5
-  viewAngle: 5
+  viewDistance: 50
+  viewAngle: 90
   obstacleMask:
     serializedVersion: 2
     m_Bits: 8
   moveSpeed: 5
+  alertRadius: 90
+  lastKnowPlayerPosition: {x: 0, y: 0, z: 0}
+--- !u!136 &187795470
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 187795464}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &200645376
 GameObject:
   m_ObjectHideFlags: 0
@@ -696,7 +722,7 @@ GameObject:
   - component: {fileID: 200645377}
   - component: {fileID: 200645378}
   m_Layer: 0
-  m_Name: Node (3)
+  m_Name: Node (28)
   m_TagString: Untagged
   m_Icon: {fileID: 4162164826716764455, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -743,7 +769,7 @@ GameObject:
   - component: {fileID: 244247087}
   - component: {fileID: 244247086}
   m_Layer: 0
-  m_Name: Node (4)
+  m_Name: Node (9)
   m_TagString: Untagged
   m_Icon: {fileID: 8418204508859773708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -872,7 +898,7 @@ GameObject:
   - component: {fileID: 322662303}
   - component: {fileID: 322662302}
   m_Layer: 0
-  m_Name: Node (1)
+  m_Name: Node (11)
   m_TagString: Untagged
   m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -918,6 +944,7 @@ GameObject:
   m_Component:
   - component: {fileID: 345854629}
   - component: {fileID: 345854630}
+  - component: {fileID: 345854631}
   m_Layer: 0
   m_Name: Enemy (1)
   m_TagString: Untagged
@@ -960,12 +987,37 @@ MonoBehaviour:
   - {fileID: 2138660269}
   - {fileID: 244247086}
   player: {fileID: 5238820402657899787}
-  viewDistance: 5
-  viewAngle: 5
+  viewDistance: 50
+  viewAngle: 90
   obstacleMask:
     serializedVersion: 2
     m_Bits: 8
   moveSpeed: 5
+  alertRadius: 90
+  lastKnowPlayerPosition: {x: 0, y: 0, z: 0}
+--- !u!136 &345854631
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 345854625}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &347585874
 GameObject:
   m_ObjectHideFlags: 0
@@ -1012,7 +1064,7 @@ GameObject:
   - component: {fileID: 400284262}
   - component: {fileID: 400284263}
   m_Layer: 0
-  m_Name: Node (7)
+  m_Name: Node (37)
   m_TagString: Untagged
   m_Icon: {fileID: 4162164826716764455, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -1245,7 +1297,7 @@ GameObject:
   - component: {fileID: 528518458}
   - component: {fileID: 528518459}
   m_Layer: 0
-  m_Name: Node (5)
+  m_Name: Node (35)
   m_TagString: Untagged
   m_Icon: {fileID: 4162164826716764455, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -1292,7 +1344,7 @@ GameObject:
   - component: {fileID: 564336287}
   - component: {fileID: 564336288}
   m_Layer: 0
-  m_Name: Node (4)
+  m_Name: Node (24)
   m_TagString: Untagged
   m_Icon: {fileID: 4162164826716764455, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -1339,7 +1391,7 @@ GameObject:
   - component: {fileID: 596665284}
   - component: {fileID: 596665285}
   m_Layer: 0
-  m_Name: Node (6)
+  m_Name: Node (36)
   m_TagString: Untagged
   m_Icon: {fileID: 4162164826716764455, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -1386,7 +1438,7 @@ GameObject:
   - component: {fileID: 603036048}
   - component: {fileID: 603036049}
   m_Layer: 0
-  m_Name: Node (1)
+  m_Name: Node (39)
   m_TagString: Untagged
   m_Icon: {fileID: 4162164826716764455, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -1469,7 +1521,7 @@ GameObject:
   - component: {fileID: 623311998}
   - component: {fileID: 623311997}
   m_Layer: 0
-  m_Name: Node (2)
+  m_Name: Node (17)
   m_TagString: Untagged
   m_Icon: {fileID: 2488908585195742037, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -1516,6 +1568,7 @@ GameObject:
   m_Component:
   - component: {fileID: 641986655}
   - component: {fileID: 641986656}
+  - component: {fileID: 641986657}
   m_Layer: 0
   m_Name: Enemy (2)
   m_TagString: Untagged
@@ -1558,12 +1611,37 @@ MonoBehaviour:
   - {fileID: 1339889872}
   - {fileID: 1595693016}
   player: {fileID: 5238820402657899787}
-  viewDistance: 5
-  viewAngle: 5
+  viewDistance: 50
+  viewAngle: 90
   obstacleMask:
     serializedVersion: 2
     m_Bits: 8
   moveSpeed: 5
+  alertRadius: 90
+  lastKnowPlayerPosition: {x: 0, y: 0, z: 0}
+--- !u!136 &641986657
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 641986651}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &721635611
 GameObject:
   m_ObjectHideFlags: 0
@@ -1700,7 +1778,7 @@ GameObject:
   - component: {fileID: 782512324}
   - component: {fileID: 782512323}
   m_Layer: 0
-  m_Name: Node
+  m_Name: Node (10)
   m_TagString: Untagged
   m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -1747,7 +1825,7 @@ GameObject:
   - component: {fileID: 793701190}
   - component: {fileID: 793701191}
   m_Layer: 0
-  m_Name: Node (4)
+  m_Name: Node (34)
   m_TagString: Untagged
   m_Icon: {fileID: 4162164826716764455, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -1877,7 +1955,7 @@ GameObject:
   - component: {fileID: 825443572}
   - component: {fileID: 825443573}
   m_Layer: 0
-  m_Name: Node (1)
+  m_Name: Node (26)
   m_TagString: Untagged
   m_Icon: {fileID: 4162164826716764455, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -1973,7 +2051,7 @@ GameObject:
   - component: {fileID: 1010536770}
   - component: {fileID: 1010536771}
   m_Layer: 0
-  m_Name: Node (2)
+  m_Name: Node (27)
   m_TagString: Untagged
   m_Icon: {fileID: 4162164826716764455, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -2020,7 +2098,7 @@ GameObject:
   - component: {fileID: 1057405470}
   - component: {fileID: 1057405469}
   m_Layer: 0
-  m_Name: Node (1)
+  m_Name: Node (21)
   m_TagString: Untagged
   m_Icon: {fileID: 4162164826716764455, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -2067,7 +2145,7 @@ GameObject:
   - component: {fileID: 1086279686}
   - component: {fileID: 1086279687}
   m_Layer: 0
-  m_Name: Node
+  m_Name: Node (43)
   m_TagString: Untagged
   m_Icon: {fileID: 4162164826716764455, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -2161,7 +2239,7 @@ GameObject:
   - component: {fileID: 1122260566}
   - component: {fileID: 1122260567}
   m_Layer: 0
-  m_Name: Node (3)
+  m_Name: Node (23)
   m_TagString: Untagged
   m_Icon: {fileID: 4162164826716764455, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -2208,7 +2286,7 @@ GameObject:
   - component: {fileID: 1176632659}
   - component: {fileID: 1176632660}
   m_Layer: 0
-  m_Name: Node (2)
+  m_Name: Node (32)
   m_TagString: Untagged
   m_Icon: {fileID: 4162164826716764455, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -2434,7 +2512,7 @@ GameObject:
   - component: {fileID: 1339889873}
   - component: {fileID: 1339889872}
   m_Layer: 0
-  m_Name: Node (3)
+  m_Name: Node (13)
   m_TagString: Untagged
   m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -2645,7 +2723,7 @@ GameObject:
   - component: {fileID: 1485707786}
   - component: {fileID: 1485707785}
   m_Layer: 0
-  m_Name: Node (3)
+  m_Name: Node (18)
   m_TagString: Untagged
   m_Icon: {fileID: 2488908585195742037, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -2775,7 +2853,7 @@ GameObject:
   - component: {fileID: 1574132203}
   - component: {fileID: 1574132204}
   m_Layer: 0
-  m_Name: Node (1)
+  m_Name: Node (31)
   m_TagString: Untagged
   m_Icon: {fileID: 4162164826716764455, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -2859,7 +2937,7 @@ GameObject:
   - component: {fileID: 1595693017}
   - component: {fileID: 1595693016}
   m_Layer: 0
-  m_Name: Node (4)
+  m_Name: Node (14)
   m_TagString: Untagged
   m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -2905,7 +2983,7 @@ GameObject:
   - component: {fileID: 1596626677}
   - component: {fileID: 1596626676}
   m_Layer: 0
-  m_Name: Node (2)
+  m_Name: Node (12)
   m_TagString: Untagged
   m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -2989,7 +3067,7 @@ GameObject:
   - component: {fileID: 1660721436}
   - component: {fileID: 1660721437}
   m_Layer: 0
-  m_Name: Node
+  m_Name: Node (41)
   m_TagString: Untagged
   m_Icon: {fileID: 4162164826716764455, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -3035,7 +3113,7 @@ GameObject:
   - component: {fileID: 1712226363}
   - component: {fileID: 1712226362}
   m_Layer: 0
-  m_Name: Node (1)
+  m_Name: Node (16)
   m_TagString: Untagged
   m_Icon: {fileID: 2488908585195742037, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -3082,7 +3160,7 @@ GameObject:
   - component: {fileID: 1720648764}
   - component: {fileID: 1720648765}
   m_Layer: 0
-  m_Name: Node (3)
+  m_Name: Node (33)
   m_TagString: Untagged
   m_Icon: {fileID: 4162164826716764455, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -3129,7 +3207,7 @@ GameObject:
   - component: {fileID: 1720900031}
   - component: {fileID: 1720900032}
   m_Layer: 0
-  m_Name: Node
+  m_Name: Node (42)
   m_TagString: Untagged
   m_Icon: {fileID: 4162164826716764455, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -3164,6 +3242,55 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   neighbors:
   - {fileID: 1963167800}
+--- !u!1 &1727768610
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1727768612}
+  - component: {fileID: 1727768611}
+  m_Layer: 0
+  m_Name: NPCManger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1727768611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1727768610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e00ebfe26750a34429d72776689280a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AllNPCs:
+  - {fileID: 187795469}
+  - {fileID: 345854630}
+  - {fileID: 641986656}
+  - {fileID: 1963579508}
+--- !u!4 &1727768612
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1727768610}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.8308983, y: -10.124496, z: -6.285965}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1771803367
 GameObject:
   m_ObjectHideFlags: 0
@@ -3175,7 +3302,7 @@ GameObject:
   - component: {fileID: 1771803368}
   - component: {fileID: 1771803369}
   m_Layer: 0
-  m_Name: Node (4)
+  m_Name: Node (29)
   m_TagString: Untagged
   m_Icon: {fileID: 4162164826716764455, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -3222,7 +3349,7 @@ GameObject:
   - component: {fileID: 1821479652}
   - component: {fileID: 1821479651}
   m_Layer: 0
-  m_Name: Node
+  m_Name: Node (20)
   m_TagString: Untagged
   m_Icon: {fileID: 4162164826716764455, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -3269,7 +3396,7 @@ GameObject:
   - component: {fileID: 1959586383}
   - component: {fileID: 1959586382}
   m_Layer: 0
-  m_Name: Node (4)
+  m_Name: Node (19)
   m_TagString: Untagged
   m_Icon: {fileID: 2488908585195742037, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -3315,7 +3442,7 @@ GameObject:
   - component: {fileID: 1963167801}
   - component: {fileID: 1963167800}
   m_Layer: 0
-  m_Name: Node
+  m_Name: Node (15)
   m_TagString: Untagged
   m_Icon: {fileID: 2488908585195742037, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -3361,6 +3488,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1963579507}
   - component: {fileID: 1963579508}
+  - component: {fileID: 1963579509}
   m_Layer: 0
   m_Name: Enemy (3)
   m_TagString: Untagged
@@ -3403,12 +3531,37 @@ MonoBehaviour:
   - {fileID: 1485707785}
   - {fileID: 1959586382}
   player: {fileID: 5238820402657899787}
-  viewDistance: 5
-  viewAngle: 5
+  viewDistance: 50
+  viewAngle: 90
   obstacleMask:
     serializedVersion: 2
     m_Bits: 8
   moveSpeed: 5
+  alertRadius: 90
+  lastKnowPlayerPosition: {x: 0, y: 0, z: 0}
+--- !u!136 &1963579509
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1963579503}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &1965318932
 GameObject:
   m_ObjectHideFlags: 0
@@ -3420,7 +3573,7 @@ GameObject:
   - component: {fileID: 1965318934}
   - component: {fileID: 1965318933}
   m_Layer: 0
-  m_Name: Node (2)
+  m_Name: Node (7)
   m_TagString: Untagged
   m_Icon: {fileID: 8418204508859773708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -3503,7 +3656,7 @@ GameObject:
   - component: {fileID: 2054941560}
   - component: {fileID: 2054941559}
   m_Layer: 0
-  m_Name: Node
+  m_Name: Node (5)
   m_TagString: Untagged
   m_Icon: {fileID: 8418204508859773708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -3588,7 +3741,7 @@ GameObject:
   - component: {fileID: 2138660270}
   - component: {fileID: 2138660269}
   m_Layer: 0
-  m_Name: Node (3)
+  m_Name: Node (8)
   m_TagString: Untagged
   m_Icon: {fileID: 8418204508859773708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -4415,3 +4568,4 @@ SceneRoots:
   - {fileID: 5238820402657899787}
   - {fileID: 347585875}
   - {fileID: 1331318185}
+  - {fileID: 1727768612}

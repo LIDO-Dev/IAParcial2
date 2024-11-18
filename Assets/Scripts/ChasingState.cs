@@ -8,20 +8,26 @@ public class ChasingState : NPCState
 
     public override void Enter()
     {
-        npc.AlertOthers();
+        npc.SetDestination(npc.player.transform.position);
+        //Debug.Log($"NPC {npc.gameObject.name} está persiguiendo al jugador.");
     }
 
     public override void Update()
     {
         if (npc.CanSeePlayer())
         {
-            npc.SetDestination(npc.player.position);
+            npc.lastKnowPlayerPosition = npc.player.position;
+            npc.SetDestination(npc.player.transform.position);
         }
-        else
+
+        if (npc.IsAtDestination())
         {
             npc.SetState(new PatrollingState(npc));
         }
     }
 
-    public override void Exit() { }
+    public override void Exit()
+    {
+        //Debug.Log($"NPC {npc.gameObject.name} dejó de perseguir al jugador.");
+    }
 }

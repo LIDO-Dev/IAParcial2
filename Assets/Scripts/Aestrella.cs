@@ -6,11 +6,11 @@ public class Aestrella
 {
     public static List<Node> FindPath(Node start, Node goal)
     {
-        if(start == null || goal == null) 
+        if (start == null || goal == null)
         {
-            Debug.Log("Goal or StartNode is Null");
             return null;
         }
+
         var openSet = new List<Node> { start };
         var cameFrom = new Dictionary<Node, Node>();
         var gScore = new Dictionary<Node, float>();
