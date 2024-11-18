@@ -73,7 +73,7 @@ public class NPC : MonoBehaviour
 
     public void SetDestination(Vector3 position)
     {
-        Node targetNode = Graph.GetNearestNode(position);
+        Node targetNode = Aestrella.GetNearestNode(position);
         if (targetNode != null)
         {
             currentPath = Aestrella.FindPath(currentNode, targetNode);

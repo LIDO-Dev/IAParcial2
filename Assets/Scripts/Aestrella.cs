@@ -78,4 +78,22 @@ public class Aestrella
         path.Reverse();
         return path;
     }
+
+    public static Node GetNearestNode(Vector3 position)
+    {
+        Node nearestNode = null;
+        float nearestDistance = float.MaxValue;
+
+        foreach (var node in GameObject.FindObjectsOfType<Node>())
+        {
+            float distance = Vector3.Distance(position, node.Position);
+            if (distance < nearestDistance)
+            {
+                nearestDistance = distance;
+                nearestNode = node;
+            }
+        }
+
+        return nearestNode;
+    }
 }
