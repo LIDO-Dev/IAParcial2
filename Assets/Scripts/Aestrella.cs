@@ -6,6 +6,11 @@ public class Aestrella
 {
     public static List<Node> FindPath(Node start, Node goal)
     {
+        if(start == null || goal == null) 
+        {
+            Debug.Log("Goal or StartNode is Null");
+            return null;
+        }
         var openSet = new List<Node> { start };
         var cameFrom = new Dictionary<Node, Node>();
         var gScore = new Dictionary<Node, float>();
@@ -13,6 +18,7 @@ public class Aestrella
 
         foreach (var node in GameObject.FindObjectsOfType<Node>())
         {
+            if(node == null) continue;
             gScore[node] = float.MaxValue;
             fScore[node] = float.MaxValue;
         }
@@ -43,7 +49,7 @@ public class Aestrella
             }
         }
 
-        return null; // No path found
+        return null;
     }
     private static Node GetLowestFScore(List<Node> openSet, Dictionary<Node, float> fScore)
     {
