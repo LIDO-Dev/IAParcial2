@@ -8,7 +8,7 @@ public class AlertState : NPCState
 
     public AlertState(NPC npc, Vector3 position) : base(npc)
     {
-        lastKnownPosition = position;
+        this.lastKnownPosition = lastKnownPosition;
     }
 
     public override void Enter()

@@ -10,6 +10,18 @@ public class NPC : MonoBehaviour
     public float viewAngle;
     public LayerMask obstacleMask;
 
+    public float moveSpeed = 5f;
+
+    public float alertRadius = 10f;
+
+    public Vector3 lastKnowPlayerPosition;
+
+    private Node currentNode;
+
+    private List<Node> currentPath;
+
+    private int currentNodeIndex;
+
     private NPCState currentState;
 
     void Start()
@@ -20,6 +32,20 @@ public class NPC : MonoBehaviour
     void Update()
     {
         currentState.Update();
+
+        if (currentPath != null && currentNodeIndex < currentPath.Count)
+        {
+            Node targetNode = currentPath[currentNodeIndex];
+            Vector3 targetPosition = targetNode.transform.position;
+
+            transform.position = Vector3.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
+
+            if (Vector3.Distance(transform.position, targetPosition) < 0.1f)
+            {
+                currentNode = targetNode;
+                currentNodeIndex++;
+            }
+        }
     }
 
     public void SetState(NPCState newState)
@@ -47,17 +73,32 @@ public class NPC : MonoBehaviour
 
     public void SetDestination(Vector3 position)
     {
-        // Configurar movimiento al destino
+        Node targetNode = Graph.GetNearestNode(position);
+        if (targetNode != null)
+        {
+            currentPath = Aestrella.FindPath(currentNode, targetNode);
+            if (currentPath != null && currentPath.Count > 0)
+            {
+                currentNodeIndex = 0;
+            }
+        }
     }
 
     public bool IsAtDestination()
     {
-        // Comprobar si ha llegado al destino
-        return true; // Placeholder
+        return currentPath == null || currentNodeIndex >= currentPath.Count;
     }
 
     public void AlertOthers()
     {
-        // Notificar a otros NPCs
+        Collider[] colliders = Physics.OverlapSphere(transform.position, alertRadius);
+        foreach (Collider collider in colliders)
+        {
+            NPC otherNPC = collider.GetComponent<NPC>();
+            if (otherNPC != null && otherNPC != this)
+            {
+                otherNPC.SetDestination(lastKnowPlayerPosition);
+            }
+        }
     }
 }
